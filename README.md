@@ -1,7 +1,7 @@
 # Masters research - Prinavan Pillay (PLLPRI017)
 ### Univeristy of Cape Town
 
-A  recommendation  engine  for  insurance  modelling  was  designed,  implemented  and tested using a neural network and collaborative filtering approach.  The recommenda-tion engine aims to suggests suitable insurance products for new or existing customers,based on their features or selection history.  The collaborative filtering approach uses matrix factorization on an existing user base to provide recommendation scores fornew products to existing users.  The content based method uses a neural network architecture which utilized user features to provide a product recommendation for newusers.  Both  methods  were  deployed  using  the  Tensorflow  machine  learning  frame-work.  The hybrid approach helps solve for cold start problems where users have nointeraction history.
+A  recommendation  system  for  insurance  predictions was  designed,  implemented  and tested using a neural network and collaborative filtering approach.  The recommendation engine aims to determine suitable insurance products for new or existing customers,based on their profiles or previous purchases.  The collaborative filtering approach used matrix factorization on an existing user base to provide recommendation scores for new products to existing users.  The content based method uses a neural network architecture which incorporated user features to provide a product recommendation for newusers.  Both  methods  were  deployed  using Tensorflow.  The hybrid approach helps solve for cold start problems where users have no interaction history.
 
 This repository contains the code and notebooks required for model development. The following notebooks and modules can be found:
 
