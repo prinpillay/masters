@@ -26,7 +26,7 @@ DEFAULT_PARAMS = {
     'delimiter': '\t'
 }
 
-# parameters optimized with hypertuning for the MovieLens data set
+# parameters optimized with hypertuning 
 OPTIMIZED_PARAMS = {
     'latent_factors': 34,
     'regularization': 9.83,
@@ -34,7 +34,7 @@ OPTIMIZED_PARAMS = {
     'feature_wt_factor': 189.8,
 }
 
-# parameters optimized with hypertuning for the included web views data set
+# parameters optimized with hypertuning 
 OPTIMIZED_PARAMS_WEB = {
     'latent_factors': 30,
     'regularization': 7.27,
@@ -49,9 +49,7 @@ def create_test_and_train_sets(args, input_file, data_type='ratings'):
   Args:
     args: input args for job
     input_file: path to csv data file
-    data_type:  'ratings': MovieLens style ratings matrix
-                'web_views': Google Analytics time-on-page data
-
+    data_type:  'ratings': ratings matrix
   Returns:
     array of user IDs for each row of the ratings matrix
     array of item IDs for each column of the rating matrix
@@ -73,7 +71,7 @@ def create_test_and_train_sets(args, input_file, data_type='ratings'):
 def _ratings_train_and_test(use_headers, delimiter, input_file):
   """Load data set.  Assumes Movielens header, format etc.
 
-  MovieLens data starts with user_id=1.  The max user id is close to
+  Dat starts with user_id=1.  The max user id is close to
   the number of users, but there may be missing user_id's or item ids
   (i.e. movies). For our sparse matrices we need to map the user/item ids
   down to a zero-based set of indices, without missing values.
