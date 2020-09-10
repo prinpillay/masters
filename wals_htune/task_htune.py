@@ -180,7 +180,7 @@ def parse_arguments():
 
   # For data, default to using the exponential weight formula
   # with feature weight exp.
-  if args.data_type == 'web_views':
+  if args.data_type == 'insurance_recc':
     params.update({'wt_type': wals.LOG_RATINGS})
 
   return params
