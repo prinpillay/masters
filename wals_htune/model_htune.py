@@ -62,18 +62,18 @@ def create_test_and_train_sets(args, input_file, data_type='ratings'):
   if data_type == 'ratings':
     return _ratings_train_and_test(args['headers'], args['delimiter'],
                                    input_file)
-  elif data_type == 'web_views':
-    return _page_views_train_and_test(input_file)
+  elif data_type == 'insurance_recc':
+    return _insurance_train_and_test(input_file)
   else:
     raise ValueError('data_type arg value %s not supported.' % data_type)
 
 
 def _ratings_train_and_test(use_headers, delimiter, input_file):
-  """Load data set.  Assumes Movielens header, format etc.
+  """Load data set.  Insurance header, format etc.
 
   Dat starts with user_id=1.  The max user id is close to
   the number of users, but there may be missing user_id's or item ids
-  (i.e. movies). For our sparse matrices we need to map the user/item ids
+  (i.e. products). For our sparse matrices we need to map the user/item ids
   down to a zero-based set of indices, without missing values.
 
   Args:
@@ -141,24 +141,9 @@ def _ratings_train_and_test(use_headers, delimiter, input_file):
 
   return ratings[:, 0], ratings[:, 1], tr_sparse, test_sparse
 
-
-def _page_views_train_and_test(input_file):
-  """Load page views dataset, and create train and set sparse matrices.
-
-  Assumes 'clientId', 'contentId', and 'timeOnPage' columns.
-
-  Args:
-    input_file: path to csv data file
-
-  Returns:
-    array of user IDs for each row of the ratings matrix
-    array of item IDs for each column of the rating matrix
-    sparse coo_matrix for training
-    sparse coo_matrix for test
-  """
   views_df = pd.read_csv(input_file, sep=',', header=0)
 
-  df_items = pd.DataFrame({'contentId': views_df.contentId.unique()})
+  df_items = pd.DataFrame({'productID': views_df.contentId.unique()})
   df_sorted_items = df_items.sort_values('contentId').reset_index()
   pds_items = df_sorted_items.contentId
 
