@@ -114,7 +114,7 @@ def parse_arguments():
       '--data-type',
       type=str,
       default='ratings',
-      help='Data type, one of ratings (e.g. MovieLens) or web_views (GA data)'
+      help='Data type'
   )
   parser.add_argument(
       '--delimiter',
@@ -178,9 +178,8 @@ def parse_arguments():
   params.update({'output_dir': output_dir})
   params.update({'job_name': job_name})
 
-  # For web_view data, default to using the exponential weight formula
+  # For data, default to using the exponential weight formula
   # with feature weight exp.
-  # For movie lens data, default to the linear weight formula.
   if args.data_type == 'web_views':
     params.update({'wt_type': wals.LOG_RATINGS})
 
