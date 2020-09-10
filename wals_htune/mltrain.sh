@@ -11,11 +11,10 @@ run on ML Engine.  For ML Engine cloud jobs the data_dir must be prefixed with
 gs:// and point to an existing bucket, and the input file must reside on GCS.
 
 Optional args:
-  --data-type:      Default to 'ratings', meaning MovieLens ratings from 0-5.
-                    Set to 'web_views' for Google Analytics data.
+  --data-type:      Default to 'ratings'
   --delimiter:      CSV delimiter, default to '\t'.
   --use-optimized:  Use optimized hyperparamters, default False.
-  --headers:        Default False for 'ratings', True for 'web_views'.
+  --headers:        Default False for 'ratings',
 "
 
 }
